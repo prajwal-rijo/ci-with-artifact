@@ -22,7 +22,7 @@ pipeline {
     stage('Checkout') {
       steps {
         git branch: 'main',
-            url: 'https://github.com/Theertha12345/maven-projects.git'
+            url: 'https://github.com/prajwal-rijo/ci-with-artifact.git'
       }
     }
 
