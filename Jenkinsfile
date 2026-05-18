@@ -7,7 +7,7 @@ pipeline {
 
     GROUP_ID    = "com.example"
     ARTIFACT_ID = "hello-devops"
-    VERSION     = "1.0"
+    VERSION     = "1.0-SNAPSHOT"
     SONAR_HOST  = "http://3.95.65.192:9000"
 
 
