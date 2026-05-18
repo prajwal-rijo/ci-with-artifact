@@ -72,8 +72,8 @@ pipeline {
     stage('Deploy on EC2 (Local)') {
       steps {
         sh '''
-          sudo mkdir -p ${DEPLOY_DIR}
-          sudo cp target/${ARTIFACT_ID}.war ${DEPLOY_DIR}/${ARTIFACT_ID}.war
+          mkdir -p ${DEPLOY_DIR}
+cp target/${ARTIFACT_ID}.war ${DEPLOY_DIR}/${ARTIFACT_ID}.war
           echo "WAR copied to ${DEPLOY_DIR}"
         '''
       }
