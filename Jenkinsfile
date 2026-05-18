@@ -3,16 +3,16 @@ pipeline {
 
 
   environment {
-    PROJECT_KEY = "maven project"
+    PROJECT_KEY = "maven-project"
 
     GROUP_ID    = "com.example"
     ARTIFACT_ID = "hello-devops"
     VERSION     = "1.0"
+    SONAR_HOST  = "http://3.95.65.192:9000"
 
-    SONAR_HOST  = "http://100.52.244.50:9000"
 
-    NEXUS_URL   = "http://54.234.49.38:8081"
-    NEXUS_REPO  = "maven-snapshort"
+    NEXUS_URL   = "98.93.74.236:8081"
+    NEXUS_REPO  = "maven-snapshot"
 
     DEPLOY_DIR  = "/opt/app"
   }
@@ -50,9 +50,9 @@ pipeline {
     stage('Upload Artifact to Nexus') {
       steps {
         nexusArtifactUploader(
-          nexusVersion: 'nexus3',
-          protocol: 'http',
-          nexusUrl: 'http//:54.234.49.38:8081',
+  nexusVersion: 'nexus3',
+  protocol: 'http',
+  nexusUrl: "${NEXUS_URL}",
           repository: "${NEXUS_REPO}",
           credentialsId: 'nexus-creds',
           groupId: "${GROUP_ID}",
